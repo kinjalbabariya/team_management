@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Team Management</title>
+    <%#= favicon_link_tag 'favicon.ico' %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type => "image/x-icon" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="app-wrap">
+      <%= render 'layouts/login_header' %>
+      <div class="app-container">
+        <%= render 'layouts/side_panel' %>
+        <div class="app-main">
+          <div id="flash"><%= render 'shared/flash_messages' %></div>
+          <%= yield %>
+        </div>
+      </div>
+      <!-- BEGIN .main-footer -->
+      <footer class="main-footer fixed-btm">
+        <%= I18n.t('footer.copyright', current_year: Date.today.year) %>
+      </footer>
+      <!-- END: .main-footer -->
+    </div>
+    <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+
+  </body>
+</html>

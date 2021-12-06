@@ -1,0 +1,41 @@
+<div class="login-screen row align-items-center">
+	<div class="container-fluid">
+	<div class="col-md-12 col-lg-10 col-sm-12 m-auto m-pd-0">
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+		<div class="new-login-box align-items-start">
+				<div class="box ">
+					<div class="new-logo">
+						<a href="#" class="">
+              <%= image_tag 'Final_logo.png', class: 'final_logo' %>
+						</a>
+					</div>
+				</div>
+				<div class="box w-auto">
+					<div class="new-login-box-details">
+						<h3>forgot password</h3>
+						<p class="text-muted mb-0">in order to receive your access code by email,</p>
+						<p class="text-muted mb-0">please enter the address you provided during the registration process.</p>
+						<div class="detail-box">
+							<div class="login-input">
+									<%= f.label :email, class: "d-block" do %>
+							<i class="icon-markunread	"></i>
+							<%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email",placeholder: "Email" %>
+                <% end %>
+						</div>
+							<div class="actions login-btn-box">
+								<%= f.submit "submit", class: 'btn-login mr-2' %>
+								<%= link_to 'Cancel', root_path, class: 'btn-cancel' %>
+							</div>
+							<!-- <div> -->
+									<%# if devise_mapping.registerable? && controller_name != 'registrations' %>
+                  <%#= link_to "Sign up", new_registration_path(resource_name), class:'additional-link' %>
+                <%# end -%>
+						  <!-- </div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	</div>
+</div>

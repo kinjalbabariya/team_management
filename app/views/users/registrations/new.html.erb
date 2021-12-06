@@ -1,0 +1,72 @@
+<div class="login-screen row align-items-center">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="login-container">
+        <div class="row no-gutters">
+          <div class="col-xl-6 col-lg-7 col-md-8 col-sm-12">
+            <div class="login-box">
+              <a href="#" class="login-logo">
+                <h3>Sign Up</h3>
+              </a>
+              <div class="input-group-aa">
+                <%= f.label :first_name, class: "input-group-addon" do %>
+                  <span class: "input-group-addon"><i class="icon-account_circle"></i></span>
+                  <%= f.text_field :first_name, class: "form-control", autofocus: true, autocomplete: "first_name",placeholder: "First Name" , required: true%>
+                <% end %>
+              </div>
+              <br>
+              <div class="input-group-aa">
+                <%= f.label :last_name, class: "input-group-addon" do %>
+                  <span class: "input-group-addon"><i class="icon-account_circle"></i></span>
+                  <%= f.text_field :last_name, class: "form-control", autofocus: true, autocomplete: "last_name",placeholder: "Last Name", required: true %>
+                <% end %>
+              </div>
+              <br>
+              <div class="input-group-aa">
+                <%= f.label :dob, class: "input-group-addon" do %>
+                  <span class: "input-group-addon"><i class="icon-account_circle"></i></span>
+                  <%= f.date_field :dob, as: :date, class: "form-control datepicker", autofocus: true, autocomplete: "dob",placeholder: "DOB" , required: true%>
+                <% end %>
+              </div>
+              <br>
+              <div class="input-group-aa">
+                <%= f.label :mobile_no, class: "input-group-addon" do %>
+                  <span class: "input-group-addon"><i class="icon-account_circle"></i></span>
+                  <%= f.number_field :mobile_no, class: "form-control", autofocus: true, autocomplete: "mobile_no",placeholder: "Mobile Number",maxlength: 10,minlength: 10, required: true %>
+                <% end %>
+              </div>
+              <br>
+              <div class="input-group-aa">
+                <%= f.label :email, class: "input-group-addon" do %>
+                  <span class: "input-group-addon"><i class="icon-account_circle"></i></span>
+                  <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email",placeholder: "Email", required: true %>
+                <% end %>
+              </div>
+              <br>
+
+              <div class="input-group-aa">
+                <%= f.label :password,class: "input-group-addon" do %><br /><span class: "input-group-addon"><i class="icon-verified_user"></i></span><br />
+                  <%= f.password_field :password,class: "form-control", autocomplete: "current-password",placeholder: "New Password" ,minlength: 7, required: true%>
+                <% end %>
+              </div>
+
+              <div class="actions clearfix">
+                <%= f.submit "Sign up",class: "btn btn-primary" %>
+              </div>
+
+              <div class="or"></div>
+              <div class="mt-4">
+                <%- if controller_name != 'sessions' %>
+                  <%= link_to "Log in",new_session_path(resource_name),class:'additional-link' %><br />
+                <% end -%>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-5 col-md-4 col-sm-12">
+            <div class="signup-slider"></div>
+          </div>
+        </div>
+      </div>
+   <% end %>
+  </div>
+</div>

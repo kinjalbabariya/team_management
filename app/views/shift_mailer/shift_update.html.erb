@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Team Name: <%= @team&.name %></h1>
+    <h3>Member Name: <%= @member&.name %></h1>
+    <h3>Shift Time: <%= "#{Date::DAYNAMES[(@shift&.day) % 7]}, #{@shift&.start_time&.strftime("%H:%M")} TO #{@shift&.end_time&.strftime("%H:%M")}"%></h1>
+  </body>
+</html>

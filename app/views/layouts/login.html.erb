@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<meta name="description" content="CostPe" />
+		<meta name="keywords" content="CostPe">
+		<meta name="author" content="CostPe" />
+		<link rel="shortcut icon" href="/assets/favicon.ico" />
+		<title></title>
+
+    	<%#= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+		<%= stylesheet_link_tag    'login', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'login', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+</head>
+	<body class="login-bg">
+		<div class="container">
+			<%= render 'layouts/messages' %>
+    	<%= yield %>
+	  </div>
+	  <footer class="main-footer no-bdr fixed-btm">
+			<div class="container">
+				<%= I18n.t('footer.copyright', current_year: Date.today.year) %>
+			</div>
+		</footer>
+	</body>
+</html>

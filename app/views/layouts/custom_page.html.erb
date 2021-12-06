@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CustomPage</title>
+    <%#= favicon_link_tag 'favicon.ico' %>
+    <%= favicon_link_tag asset_path('favicon_2.ico'), :rel => 'icon', :type => "image/x-icon" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag    'custom_pages',  'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'util',  'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',  'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

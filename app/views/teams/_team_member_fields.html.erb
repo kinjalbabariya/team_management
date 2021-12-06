@@ -1,0 +1,15 @@
+<div class="nested-fields">
+  <div class="form-group">
+    <%= f.label :Select_Member %>
+    <%= f.select :member_id, current_user&.members.all.map { |m| [m.name, m.id] }, {include_blank: true}, class: 'form-control team_member_id form-control-sm' , required: true %>
+    <%= link_to_remove_association button_tag('Remove', type: "button", class: "btn btn-secondary btn-sm mr-1"), f %>
+  </div>
+</div>
+<script>
+   $(document).ready(function() {
+       $(".team_member_id").select2({
+        placeholder: "",
+        allowClear: true
+      });
+   });
+</script>

@@ -1,0 +1,31 @@
+<aside class="app-side" id="app-side">
+	<!-- BEGIN .side-content -->
+	<div class="side-content ">
+		<!-- BEGIN .user-profile -->
+		<div class="user-profile">
+			<div class="profile-box">
+				<%= image_tag('default_user.png', class: 'user-profile-thumb', alt: 'user-profile') %>
+			</div>
+			<h6 class="profile-name"><%= current_user&.first_name %></h6>
+			<div class="clearfix"></div>
+		</div>
+		<!-- END .user-profile -->
+		<!-- BEGIN .side-nav -->
+		<nav class="side-nav">
+		<ul class="unifyMenu" id="unifyMenu">
+
+			<li class="<%= current_class?('teams') %>">
+				<%= link_to "<span class='has-icon'><i class='icon-group'></i></span><span class='nav-title'>Teams</span>".html_safe, teams_path %>
+			</li>
+			<li class="<%= current_class?('members') %>">
+				<%= link_to  "<span class='has-icon'><i class='icon-add-user'></i></span><span class='nav-title'>Members</span>".html_safe, members_path %>
+			</li>
+			<li class="<%= current_class?('shifts') %>">
+				<%= link_to  "<span class='has-icon'><i class='icon-laptop_windows'></i></span><span class='nav-title'>Shifts</span>".html_safe, shifts_path %>
+			</li>
+
+			
+		</ul>
+	</nav>
+</div>
+</aside>

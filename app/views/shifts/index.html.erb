@@ -1,0 +1,54 @@
+<header class="main-heading" data-turbolinks='false'>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+        <div class="page-icon">
+          <i class="icon-people"></i>
+        </div>
+        <div class="page-title">
+          <h5>Shifts</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="main-content" data-turbolinks='false'>
+  <div class="row gutters">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="col-xl-3 col-sm-12">
+            <%= label_tag :team  %>
+            <%= select_tag :team_id, options_for_select((current_user&.teams.map { |t| [t.name, t.id] }), params[:team_id]), {include_blank: 'All' , class: "form-control form-control-sm", id: "filter_team_id" }%>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body table-responsive table-width1">
+          <div class="col-xl-6 col-sm-12">
+            <table class="table table-bordered table-responsive table-striped">
+              <thead>
+                <tr>
+                  <th>Member Name</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @shifts.each do |shift| %>
+                  <tr>
+                    <td><%= shift.name %></td>
+                    <td> 
+                      <%= button_tag(type: 'button', onclick: "fnManageShift(#{shift.id})", id: "BtnManageShift", class: "btn btn-primary btn-sm mr-1", tabindex: "-1") do %>
+                        Manage Shift
+                      <% end %>                   
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+
+
+<header class="main-heading" data-turbolinks='false'>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+        <div class="page-icon">
+          <i class="icon-people"></i>
+        </div>
+        <div class="page-title">
+          <h5>New Member</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="main-content" data-turbolinks='false'>
+  <div class="row gutters">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <%= form_with(model: member, local: true) do |f| %>
+        <div class="card">
+           <% if member.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+              <ul>
+              <% member.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <div class="card-body table-responsive table-width1">
+            <div class="row">
+              <div class="col-md-4 col-xs-12">
+                <div class="form-group">
+                <%= f.label :name, class: 'required-field' %>
+                <%= f.text_field :name, class: 'form-control', placeholder: 'Name', required: true %>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-xs-12">
+                <div class="form-group">
+                  <%= f.submit class: 'btn btn-primary' %>
+                  <%= link_to 'Cancel', @member, class: 'btn btn-light' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+AllCops:
+  TargetRubyVersion: 2.5.0
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*.rb
+    - config/spring.rb
+    - bin/**/*
+    - node_modules/**/*
+    - test/**/*
+  DisplayCopNames: true
+Documentation:
+  Enabled: false
+Style/DateTime:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/TernaryParentheses:
+  Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
+Naming/AccessorMethodName:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Style/RescueModifier:
+  Enabled: false
+Metrics/LineLength:
+  Max: 300
+  Exclude:
+    - app/admin/products.rb
+Metrics/BlockLength:
+  Max: 50
+  Exclude:
+    - config/routes.rb
+    - app/admin/*.rb
+Metrics/LineLength:
+  Max: 500
+  Exclude:
+    - app/controllers/api_controller.rb

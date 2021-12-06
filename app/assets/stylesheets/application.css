@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap.min.css
+ *= require icomoon.css
+ *= require main.css
+ *= require chartist.min.css
+ *= require chartist-custom.css
+ *= require dataTables.bs4.css
+ *= require dataTables.bs4-custom.css
+ *= require jquery-ui
+ *= require select2.min.css
+ *= require custom-filter.css
+ *= require custom.css.scss
+ *= require users.scss
+ */
+
+.error-pos{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    min-width: 25%;
+    max-width: 75%;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 50px rgba(0,0,0,.23);
+    z-index: 99999;
+    font-size: 13px;
+    background-color: #e84c62;
+    border: 1px solid #e84c62;
+    color: #fff;
+	}
+	.close{
+		color: #fff !important;
+		opacity: 1;
+		text-shadow: none;
+  }
+  @media only screen and (max-width: 767px) {
+    .error-pos {
+      width: 100%;
+      right: 0;
+      top: 0;
+      border-radius: 0;
+      padding: 10px;
+      font-size: 13px;
+      max-width: 100%;
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+  .input-group-aa {
+    position: relative;
+    width:100%
+}
